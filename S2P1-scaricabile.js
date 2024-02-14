@@ -5,17 +5,23 @@
 */
 
 console.log("Esercizio n. 1");
-let num1 = prompt("Inserisci il primo numero intero: ");
-let num2 = prompt("Inserisci il secondo numero intero: ");
+let num1 = prompt("Esercizio 1 - Algoritmo per trovare il più grande tra due numeri interi. Inserisci il primo numero intero: ");
+let num2 = prompt("Esercizio 1 - Algoritmo per trovare il più grande tra due numeri interi. Inserisci il secondo numero intero: ");
 
-console.log("Numero 1: " + num1, "Numero 2: " + num2);
-if (num1 > num2) { // verifica se il numero 1 è più grande del numero 2;
-  console.log(num1 + " è il numero più grande.");
-} else if (num2 > num1) { // verifica se il numero 2 è più grande del numero 2;
-  console.log(num2 + " è il numero più grande.");
-} else { // se non vengono soddisfatte le precedenti condizioni;
-  console.log("I due numeri sono uguali!!!");
+if (!parseInt(num1) || !parseInt(num2)) { // verifica se il valore inserito corrisponde ad un itero
+    console.log("Hai inserito un valore non valido...")
+} else { // se i valori sono corretti esegue il confronto dei numeri inseriti
+    console.log("Numero 1: " + num1, "Numero 2: " + num2);
+    if (num1 > num2) { // verifica se il numero 1 è più grande del numero 2;
+      console.log(num1 + " è il numero più grande.");
+    } else if (num2 > num1) { // verifica se il numero 2 è più grande del numero 2;
+      console.log(num2 + " è il numero più grande.");
+    } else { // se non vengono soddisfatte le precedenti condizioni;
+      console.log("I due numeri sono uguali!!!");
+    }
 }
+
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -33,19 +39,25 @@ ESERCIZIO 2
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Esercizio n. 2");
-let num = prompt("Inserisci un numero: ");
-
-if (num < 5) {
-  console.log("Tiny");
-} else if (num < 10) {
-  console.log("Small");
-} else if (num < 15) {
-  console.log("Medium");
-} else if (num < 20) {
-  console.log("Large");
-} else if (num >= 20) {
-  console.log("Huge");
+let num = prompt("Esercizio n. 2 - Condizione if/else. Inserisci un numero intero: ");
+ 
+if (!parseInt(num)) { // verifica se il valore inserito corrisponde ad un iter
+    console.log("Hai inserito un valore non valido...")
+} else { // se il valore inserito è un intero esegue il blocco di codice if/else
+    if (num < 5) {
+        console.log("Tiny");
+      } else if (num < 10) {
+        console.log("Small");
+      } else if (num < 15) {
+        console.log("Medium");
+      } else if (num < 20) {
+        console.log("Large");
+      } else if (num >= 20) {
+        console.log("Huge");
+      }
 }
+
+
 
 //ESERCIZI SUI CICLI: 
 
@@ -56,9 +68,9 @@ if (num < 5) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Eserizio n. 3");
-let list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // arreay composto da valori da 0 a 10
 for (let i = 0; i < list.length; i++) {
-  if (list[i] == 3 || list[i] == 8) {
+  if (list[i] == 3 || list[i] == 8) { // se nella lista incontra il valore di 3 o 8 continua e non esegue il console.log()
     continue;
   }
   console.log(list[i]);
@@ -71,10 +83,10 @@ for (let i = 0; i < list.length; i++) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Esercizio n. 4");
-for (let i = 0; i <= 15; i++) {
-  if (i % 2 == 0) {
+for (let i = 0; i <= 15; i++) { // esegue un ciclo di for di numeri interi da 0 a 15
+  if (i % 2 == 0) { // verifica se esiste un valore il cui resto da zero e restituisce numero pari
     console.log(i, "numero pari.");
-  } else {
+  } else { // altrimenti restituisce numero dispari
     console.log(i, "numero dispari.");
   }
 }
@@ -91,14 +103,20 @@ console.log("Esercizio extra n. 1");
 let dato1 = prompt("Inserisci il primo numero intero: ");
 let dato2 = prompt("Inserisci il secondo numero intero: ");
 
-console.log("Primo numero inserito: " + dato1);
-console.log("Secondo numero inserito: " + dato2);
-
-if (dato1 == 8 || dato2 == 8 || (dato1 + dato2) == 8 || (dato1 - dato2) == 8) { 
-  console.log("Hai inserito un numero 8 oppure la somma o la sottrazione dei due numeri da 8.");
-} else {
-  console.log("I dati inseriti non danno nessun valore di 8");
+if (!parseInt(dato1) || !parseInt(dato2)) { // verifica se i valori inseriti nel prompt sono validi
+    console.log("Hai inserito un valore non valido...");
+} else { // se i valori sono corretti esegue il codice
+    console.log("Primo numero inserito: " + dato1);
+    console.log("Secondo numero inserito: " + dato2);
+    
+    if (dato1 === 8 || dato2 === 8 || (dato1 + dato2) === 8 || (dato1 - dato2) === 8 || (dato2 - dato1) === 8) { // verifica se tra i valori esiste la condizione in cui si ottiene un valore di 8. 
+      console.log("Hai inserito un numero 8 oppure la somma o la sottrazione dei due numeri da 8.");
+    } else {
+      console.log("I dati inseriti non danno nessun valore di 8.");
+    }
 }
+
+
 
 /* ESERCIZIO EXTRA 2
 Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
@@ -111,16 +129,16 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 console.log("Esercizio extra n. 2");
 let totalShoppingCart = 0;
 let shipping = 10;
-let spesa = [1, 15, 10, 5];
+let spesa = [3, 15, 10, 5]; // array della lista contenente il costo di ogni soingolo articolo acquistato
 
-for (let i = 0; i < spesa.length; i++) {
+for (let i = 0; i < spesa.length; i++) { // esegue un ciclo for per visualizzare in console gli articoli acquistati
   console.log("Articolo ",i + 1 ,".... €", spesa[i])
-  totalShoppingCart += spesa[i];
+  totalShoppingCart += spesa[i]; // esegue la somma di tutti gli articoli acquistati
 }
 console.log("Totale carrello: €", totalShoppingCart);
 
-if (totalShoppingCart >= 50) {
-  console.log("Spedizione gratuita...............");
+if (totalShoppingCart >= 50) { // verifica la condizione per avere la spesa di spedizione gratuita a fronte di una spesa maggiore o uguale a € 50
+  console.log("Spedizione gratuita.");
   console.log("Totale costo esclusa spedizione: €", totalShoppingCart);
 } else {
   console.log("Spedizione.................: €", shipping);
@@ -139,23 +157,24 @@ console.log("Esercizio extra n. 3");
 let totalShoppingCart1 = 0;
 let shipping1 = 10;
 let sconto = 20;
-let spesa1 = [100, 15, 10, 5];
+let spesa1 = [100, 15, 10, 5]; // array della lista contenente il costo di ogni soingolo articolo acquistato
 
-for (let i = 0; i < spesa1.length; i++) {
-  let sconto2 = spesa1[i] - ((spesa1[i] * 20) / 100);
+for (let i = 0; i < spesa1.length; i++) { // esegue un ciclo for per visualizzare in console gli articoli acquistati
+  let sconto2 = spesa1[i] - ((spesa1[i] * sconto) / 100); // applica lo sconto del 20% per ogni singolo articolo acquistato
   console.log("Articolo", i + 1 ,"sconto", sconto + "%", "€", sconto2);
-  totalShoppingCart1 += sconto2;
+  totalShoppingCart1 += sconto2; 
 }
 console.log("Totale carrello: €", totalShoppingCart1);
 
-if (totalShoppingCart1 >= 50) {
-  console.log("Spedizione gratuita...............");
+if (totalShoppingCart1 >= 50) { // verifica la condizione per avere la spesa di spedizione gratuita a fronte di una spesa maggiore o uguale a € 50
+  console.log("Spedizione gratuita.");
   console.log("Totale costo esclusa spedizione: €", totalShoppingCart1);
 } else {
   console.log("Spedizione.................: €", shipping1);
   console.log("Totale spesa...............: €", totalShoppingCart1);
   console.log("Totale inclusa spedizione..: €", (totalShoppingCart1 + shipping1));
 }
+
 
 
 /*  ESERCIZIO EXTRA 4
@@ -168,9 +187,9 @@ if (totalShoppingCart1 >= 50) {
 
 console.log("Esercizio extra n. 4");
 let gender;
-let isMale = true;
+let isMale = true; 
 
-gender = isMale ? "Male" : "Female";
+gender = isMale ? "Male" : "Female"; // verifica la condizione se la variabile isMale è true o false è restituisce il valore corrispondente
 console.log("gender:", gender);
 
 
@@ -181,13 +200,13 @@ console.log("gender:", gender);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 console.log("Esercizio extra n. 5");
-for (let i = 1; i <= 100; i++) {
-  if (i % 3 == 0 && i % 5 == 0) {
-    console.log("FizzBuzz");
-  } else if (i % 3 == 0) {
-    console.log("Fizz");
-  } else if (i % 5 == 0) {
-    console.log("Buzz");
+for (let i = 1; i <= 100; i++) { // esegue un ciclo dei numeri a partire dal valore 1 fino a 100
+  if (i % 3 === 0 && i % 5 === 0) { // se si verifica la condizione simultanea che un numero è multiplo di 3 e multiplo di 5 
+    console.log("FizzBuzz"); // scrive in console "FizzBuzz"
+  } else if (i % 3 === 0) { // se invece la condizione restituisce un valore multiplo di 3
+    console.log("Fizz"); // scrive in console "Fizz"
+  } else if (i % 5 === 0) { // se invece il numero è un multiplo di 5
+    console.log("Buzz"); // visualizza in console "Buzz"
   } else {
     console.log(i);
   }
